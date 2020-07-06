@@ -19,6 +19,6 @@
 
 
 ## To-Do
-[x] Create API with POST, GET, GET All, PUT(update), DELETE paths
-[ ] Pass in optional query parameter allowing user to search notes by their bodies
-[ ] Automatically add in serialized id to each entry, without having to manually enter it in POST request
+- [x] Create API with POST, GET, GET All, PUT(update), DELETE paths
+- [ ] Pass in optional query parameter allowing user to search notes by their bodies
+- [ ] Automatically add in serialized id to each entry, without having to manually enter it in POST request
