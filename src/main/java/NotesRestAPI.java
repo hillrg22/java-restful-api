@@ -15,7 +15,7 @@ public class NotesRestAPI {
 		
 		get("/hello", (req, res) -> "Hello to the World!");
 		
-		post("/notes", (req, res) -> {
+		post("/api/notes", (req, res) -> {
 			res.type("application/json");
 			
 			Note note = new Gson().fromJson(req.body(), Note.class);
@@ -24,20 +24,20 @@ public class NotesRestAPI {
 			return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS));
 		});
 		
-		get("/notes", (req, res) ->{
+		get("/api/notes", (req, res) ->{
 			res.type("application/json");
 			return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, new Gson().toJsonTree(noteService.getNotes())));
 			
 		});
 		
-		get("/notes/:id", (req, res) -> {
+		get("/api/notes/:id", (req, res) -> {
 			res.type("application/json");
 			
 			return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, new Gson().toJsonTree(noteService.getNote(req.params(":id")))));
 			
 		});
 		
-		put("/notes/:id", (req, res) -> {
+		put("/api/notes/:id", (req, res) -> {
 			res.type("application/json");
 			
 			Note toEdit = new Gson().fromJson(req.body(), Note.class);
@@ -52,7 +52,7 @@ public class NotesRestAPI {
 			
 		});
 		
-		delete("/notes/:id", (req, res) -> {
+		delete("/api/notes/:id", (req, res) -> {
 			res.type("application/json");
 			
 			noteService.deleteNote(req.params(":id"));
@@ -61,7 +61,7 @@ public class NotesRestAPI {
 			
 		});
 		
-		options("/notes/:id", (req, res) -> {
+		options("/api/notes/:id", (req, res) -> {
 			res.type("application/json");
 			
 			return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, (noteService.noteExist(req.params(":id"))) ? "Note exists" : "Note does not exist."));
