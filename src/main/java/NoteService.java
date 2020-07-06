@@ -7,6 +7,8 @@ public interface NoteService {
 	
 	public Collection<Note> getNotes();
 	
+//	public Collection<Note> getMatchingNotes(String body);
+	
 	public Note getNote(String id);
 	
 	public Note editNote(Note note) throws NoteException;
@@ -14,6 +16,7 @@ public interface NoteService {
 	public void deleteNote(String id);
 	
 	public boolean noteExist(String id);
+
 	
 	
 }

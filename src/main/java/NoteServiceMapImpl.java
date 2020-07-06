@@ -17,6 +17,11 @@ public class NoteServiceMapImpl implements NoteService {
     public Collection<Note> getNotes() {
         return noteMap.values();
     }
+    
+//    @Override
+//    public Collection<Note> getMatchingNotes(String input) {
+//        return noteMap.values();
+//    }
 
     @Override
     public Note getNote(String id) {

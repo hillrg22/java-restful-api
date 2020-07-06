@@ -37,6 +37,12 @@ public class NotesRestAPI {
 			
 		});
 		
+//		get("/api/notes?query=:input", (req, res) -> {
+//			res.type("application/json");
+//			
+//			return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, new Gson().toJsonTree(noteService.getMatchingNotes(req.params(":input")))));
+//		});
+		
 		put("/api/notes/:id", (req, res) -> {
 			res.type("application/json");
 			
